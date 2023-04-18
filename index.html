@@ -23,8 +23,13 @@
         <label for="contacto">Contacto (teléfono/correo)</label><br>
         <input type="text" name="contacto" id="contacto"><br><br>
 
-        <label for="pais">Nacionalidad</label><br>
-        <input type="text" name="pais" id="pais"><br><br>
+        <select name="aptitudes" id="aptitudes">
+            <option selected>Nacionalidad</option>
+            <option value="1">Perú</option>
+            <option value="2">Chile</option>
+            <option value="3">Colombia</option>
+            <option value="4">Otro</option>
+        </select>
 
         <p>Nivel de ingles:</p>
         <input type="radio" name="nivIngles" id="basico">
@@ -44,8 +49,12 @@
         <input type="checkbox" name="java" id="java">
         <label for="java">Java</label><br><br>
 
-        <label for="aptitudes">Aptitudes</label><br>
-        <input type="text" name="aptitudes" id="aptitudes"><br><br>
+        <label>Aptitudes:<input list="ap" name="ap" /></label>
+        <datalist id="ap">
+          <option value="Deportiva"></option>
+          <option value="Artistica"></option>
+          <option value="Verbal"></option>
+        </datalist>
 
         <p>Habilidades:</p>
         <input type="checkbox" name="comunicacion" id="comunicacion">
@@ -55,8 +64,8 @@
         <input type="checkbox" name="responsabilidad" id="responsabilidad">
         <label for="responsabilidad">Responsabilidad</label><br><br>
 
-        <label for="perfil">Perfil</label><br>
-        <input type="text" name="perfil" id="perfil"><br><br>
+        <label for="perfil">Perfil</label>
+        <textarea name="perfil" id="perfil" cols="50" rows="5"></textarea>
 
         <input type="submit" name="Submit" value="Subir">
 
