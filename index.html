@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <title>Formulario a CV</title>
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <h3>Completa todos los campos y presione el boton subir.</h3>
 
-    <form action="">
-        <label for="cname">Nombres y Apellidos</label><br>
-        <input type="text" name="cname" id="cname"><br><br>
+
+    <form id="formulario" onsubmit="return validarCampos()">
+
+        <h1>Bienvenido</h1>
+        <h3>Completa todos los campos y presione el boton subir.</h3>
+
+        <label for="Nombres y Apellidos">Nombres y Apellidos</label><br>
+        <input type="text" name="Nombres y Apellidos" id="cname"><br><br>
 
         <label for="nacimiento">Fecha de Nacimiento</label><br>
-        <input type="date" id="nacimiento" name="nacimiento"><br><br>
+        <input type="date" id="nacimiento" name="Nacimiento"><br><br>
 
         <label for="ocupacion">Ocupación</label><br>
-        <input type="text" name="ocupacion" id="ocupacion"><br><br>
+        <input type="text" name="Ocupación" id="ocupacion"><br><br>
 
-        <label for="contacto">Contacto (teléfono/correo)</label><br>
-        <input type="text" name="contacto" id="contacto"><br><br>
+        <label for="contacto">Telefono:</label><br>
+        <input type="text" name="Telefono" id="contacto"><br><br>
 
-        <select name="aptitudes" id="aptitudes">
+        <label for="correo">Correo:</label><br>
+        <input type="email" name="Correo Electronico" id="correo"><br><br>
+
+        <select name="Nacionalidad" id="nacionalidad">
             <option selected>Nacionalidad</option>
             <option value="1">Perú</option>
             <option value="2">Chile</option>
@@ -32,24 +39,38 @@
         </select>
 
         <p>Nivel de ingles:</p>
-        <input type="radio" name="nivIngles" id="basico">
+        <input type="radio" name="Nivel de Ingles" id="basico">
         <label for="basico">Básico</label><br>
-        <input type="radio" name="nivIngles" id="intermedio">
+        <input type="radio" name="Nivel de Ingles" id="intermedio">
         <label for="intermedio">Intermedio</label><br>
-        <input type="radio" name="nivIngles" id="avanzado">
+        <input type="radio" name="Nivel de Ingles" id="avanzado">
         <label for="avanzado">Avanzado</label><br>
-        <input type="radio" name="nivIngles" id="fluido">
+        <input type="radio" name="Nivel de Ingles" id="fluido">
         <label for="fluido">Fluido</label><br>
 
-        <p>Lenguajes de programación:</p>
-        <input type="checkbox" name="python" id="python">
-        <label for="python">Python</label><br>
-        <input type="checkbox" name="cpp" id="cpp">
-        <label for="cpp">C++</label><br>
-        <input type="checkbox" name="java" id="java">
-        <label for="java">Java</label><br><br>
+        <label for="leng">Lenguajes de programación:</label>
 
-        <label>Aptitudes:<input list="ap" name="ap" /></label>
+        <select name="Lenguaje de Programación" id="leng" multiple>
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <option value="audi">Ruby</option>
+        </select><br><br>
+
+        <label>Idioma:<input list="idi" name="Idioma" /></label>
+        <datalist id="idi">
+          <option value="Frances"></option>
+          <option value="Español"></option>
+          <option value="Ruso"></option>
+          <option value="Italiano"></option>
+          <option value="Portugues"></option>
+          <option value="Aleman"></option>
+          <option value="Chino"></option>
+          <option value="Japones"></option>
+        </datalist><br><br>
+
+
+        <label>Aptitudes:<input list="ap" name="Aptitudes" /></label>
         <datalist id="ap">
           <option value="Deportiva"></option>
           <option value="Artistica"></option>
@@ -57,19 +78,26 @@
         </datalist>
 
         <p>Habilidades:</p>
-        <input type="checkbox" name="comunicacion" id="comunicacion">
+        <input type="checkbox" name="Habilidades" id="comunicacion">
         <label for="comunicacion">Comunicación</label><br>
-        <input type="checkbox" name="empatia" id="empatia">
+        <input type="checkbox" name="Habilidades" id="empatia">
         <label for="empatia">Empatía</label><br>
-        <input type="checkbox" name="responsabilidad" id="responsabilidad">
+        <input type="checkbox" name="Habilidades" id="responsabilidad">
         <label for="responsabilidad">Responsabilidad</label><br><br>
 
-        <label for="perfil">Perfil</label>
-        <textarea name="perfil" id="perfil" cols="50" rows="5"></textarea>
+        <label for="explab">Experiencia Laboral:</label><br>
+        <textarea name="Experiencia Laboral" id="explab" cols="50" rows="10"></textarea>
 
-        <input type="submit" name="Submit" value="Subir">
+
+        <br><br>
+        <label for="perfil">Perfil</label><br>
+        <textarea name="Perfil" id="perfil" cols="50" rows="5"></textarea>
+
+        <button type="button" onclick="mostrarData()">Enviar.</button>
 
     </form>
-
+    <div id="datosMostrados" style="display: none;">
+    </div>
 </body>
 </html>
+
